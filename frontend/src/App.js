@@ -12,7 +12,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getUser, loadUser} from './actions/User.js';
 import AdminPanel from './Components/Admin/AdminPanel';
 import Timeline from './Components/Admin/TimeLine';
-import Youtube from './Components/Admin/Youtube';
 import Project from './Components/Admin/Project';
 import Loader from './Components/Loader/Loader';
 
@@ -37,13 +36,7 @@ function App() {
 					<Routes>
 						<Route
 							path="/"
-							element={
-								<Home
-									youtubes={user.youtube}
-									timelines={user.timeline}
-									skills={user.skills}
-								/>
-							}
+							element={<Home timelines={user.timeline} skills={user.skills} />}
 						/>
 						<Route path="/about" element={<About about={user.about} />} />
 						<Route
@@ -59,11 +52,6 @@ function App() {
 							path="/admin/timeline"
 							element={isAuthenticated ? <Timeline /> : <Login />}
 						/>
-						<Route
-							path="/admin/youtube"
-							element={isAuthenticated ? <Youtube /> : <Login />}
-						/>
-
 						<Route
 							path="/admin/project"
 							element={isAuthenticated ? <Project /> : <Login />}

@@ -178,54 +178,6 @@ export const deleteTimeline = (id) => async (dispatch) => {
 	}
 };
 
-export const addYoutube = (title, url, image) => async (dispatch) => {
-	try {
-		dispatch({
-			type: 'ADD_YOUTUBE_REQUEST',
-		});
-
-		const {data} = await axios.post(
-			'/api/v1/admin/youtube/add',
-			{title, url, image},
-			{
-				headers: {
-					'Content-Type': 'application/json',
-				},
-			}
-		);
-
-		dispatch({
-			type: 'ADD_YOUTUBE_SUCCESS',
-			payload: data.message,
-		});
-	} catch (error) {
-		dispatch({
-			type: 'ADD_YOUTUBE_FAILURE',
-			payload: error.response.data.message,
-		});
-	}
-};
-
-export const deleteYoutube = (id) => async (dispatch) => {
-	try {
-		dispatch({
-			type: 'DELETE_YOUTUBE_REQUEST',
-		});
-
-		const {data} = await axios.delete(`/api/v1/admin/youtube/${id}`);
-
-		dispatch({
-			type: 'DELETE_YOUTUBE_SUCCESS',
-			payload: data.message,
-		});
-	} catch (error) {
-		dispatch({
-			type: 'DELETE_YOUTUBE_FAILURE',
-			payload: error.response.data.message,
-		});
-	}
-};
-
 export const addProject =
 	(title, url, image, description, techStack) => async (dispatch) => {
 		try {

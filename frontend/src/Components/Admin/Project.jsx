@@ -120,7 +120,7 @@ const Project = () => {
 					</Button>
 				</form>
 
-				<div className="adminPanelYoutubeVideos">
+				<div className="adminPanelDiv">
 					{user &&
 						user.projects &&
 						user.projects.map((item) => (

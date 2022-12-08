@@ -49,17 +49,6 @@ const userSchema = new mongoose.Schema({
 		},
 	},
 
-	youtube: [
-		{
-			url: String,
-			title: String,
-			image: {
-				public_id: String,
-				url: String,
-			},
-		},
-	],
-
 	projects: [
 		{
 			url: String,

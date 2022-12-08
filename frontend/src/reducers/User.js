@@ -115,31 +115,6 @@ export const updateReducer = createReducer(
 			state.loading = false;
 			state.error = action.payload;
 		},
-
-		ADD_YOUTUBE_REQUEST: (state) => {
-			state.loading = true;
-		},
-		ADD_YOUTUBE_SUCCESS: (state, action) => {
-			state.loading = false;
-			state.message = action.payload;
-		},
-		ADD_YOUTUBE_FAILURE: (state, action) => {
-			state.loading = false;
-			state.error = action.payload;
-		},
-
-		DELETE_YOUTUBE_REQUEST: (state) => {
-			state.loading = true;
-		},
-		DELETE_YOUTUBE_SUCCESS: (state, action) => {
-			state.loading = false;
-			state.message = action.payload;
-		},
-		DELETE_YOUTUBE_FAILURE: (state, action) => {
-			state.loading = false;
-			state.error = action.payload;
-		},
-
 		ADD_PROJECT_REQUEST: (state) => {
 			state.loading = true;
 		},

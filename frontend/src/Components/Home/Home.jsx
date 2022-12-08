@@ -6,6 +6,7 @@ import venusImage from '../../Images/venus.jpg';
 import spaceImage from '../../Images/space.jpg';
 import {Typography} from '@mui/material';
 import Timeline from '../Timeline/Timeline';
+// import Projects from '../Projects/Projects';
 import {
 	SiCplusplus,
 	SiReact,
@@ -17,11 +18,10 @@ import {
 	SiHtml5,
 	SiThreedotjs,
 } from 'react-icons/si';
-import YoutubeCard from '../YoutubeCard/YoutubeCard';
 import {Link} from 'react-router-dom';
 import {MouseOutlined} from '@mui/icons-material';
 
-const Home = ({timelines, youtubes, skills}) => {
+const Home = ({timelines, skills}) => {
 	useEffect(() => {
 		const textureLoader = new THREE.TextureLoader();
 
@@ -190,22 +190,6 @@ const Home = ({timelines, youtubes, skills}) => {
 					<SiReact />
 					<SiNodedotjs />
 					<SiThreedotjs />
-				</div>
-			</div>
-
-			<div className="homeYoutube">
-				<Typography variant="h3"> YOUTUBE VIDEOS</Typography>
-
-				<div className="homeYoutubeWrapper">
-					{youtubes.map((item) => (
-						<YoutubeCard
-							image={item.image.url}
-							title={item.title}
-							url={item.url}
-							id={item._id}
-							key={item._id}
-						/>
-					))}
 				</div>
 			</div>
 		</div>
